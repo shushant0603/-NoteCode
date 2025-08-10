@@ -1,0 +1,45 @@
+body {
+    font-family: 'Georgia', serif;
+    background: #fdf6e3;
+    color: #4b2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #fffaf0;
+    padding: 30px;
+    border: 2px solid #deb887;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .message-box {
+    font-size: 1.3rem;
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 4px solid #b5651d;
+    background-color: #fffdf5;
+  }
+  
+  button {
+    background-color: #b5651d;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #8b4513;
+  }
+  
