@@ -1,4 +1,7 @@
 import axios from "axios";
+import Editor from "@monaco-editor/react";
+import { useState } from "react";
+import { updateFile } from "./api/fileApi"; // Adjust path accordingly
 
 export default function CodeRunner({
   language,
@@ -8,7 +11,8 @@ export default function CodeRunner({
   input,
   setInput,
   output,
-  setOutput
+  setOutput,
+  fileId,
 }) {
   const cppTemplate = `#include<iostream>
 using namespace std;
@@ -33,6 +37,17 @@ int main() {
     setLanguage(selectedLang);
     setOutput("Output will appear here...");
     setCode(selectedLang === "cpp" ? cppTemplate : javaTemplate);
+  };
+
+  const handleCodeChange = async (value) => {
+    setCode(value || "");
+    if (fileId) {
+      try {
+        await updateFile(fileId, { code: value || "" });
+      } catch (err) {
+        console.error("Failed to update code on backend", err);
+      }
+    }
   };
 
   const runCode = async () => {
@@ -76,10 +91,11 @@ int main() {
         <option value="java">Java</option>
       </select>
 
-      <textarea
+      <Editor
         className="flex-1 w-full p-2 text-sm font-mono border border-gray-300 rounded resize-none"
         value={code}
-        onChange={(e) => setCode(e.target.value)}
+        onChange={handleCodeChange}
+        language={language}
       />
 
       <label className="mt-2 mb-1 font-medium">Standard Input:</label>

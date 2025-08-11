@@ -12,11 +12,13 @@
   "dependencies": {
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/lang-cpp": "^6.0.3",
+    "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.1.11",
     "@uiw/react-codemirror": "^4.24.2",
     "axios": "^1.11.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.0",
     "react-simple-code-editor": "^0.14.1",
     "tailwindcss": "^4.1.11"
   },
