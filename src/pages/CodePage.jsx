@@ -238,7 +238,7 @@ export default function CodePage({ user }) {
   const addNewFile = async () => {
     // First test if backend is accessible
     try {
-      const testResponse = await fetch('http://localhost:3000/');
+      const testResponse = await fetch('https://note-code-backend.onrender.com/');
       if (!testResponse.ok) {
         alert("Backend server is not running. Please start the backend server first.");
         return;
